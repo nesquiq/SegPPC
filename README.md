@@ -4,6 +4,8 @@
 The Pytorch implementation of _Expand Prototype Modalities_
 
 
+
+
 <!-- >Though image-level weakly supervised semantic segmentation (WSSS) has achieved great progress with Class Activation Maps (CAMs) as the cornerstone, the large supervision gap between classification and segmentation still hampers the model to generate more complete and precise pseudo masks for segmentation. In this study, we propose weakly-supervised pixel-to-prototype contrast that can provide pixel-level supervisory signals to narrow the gap. Guided by two intuitive priors, our method is executed across different views and within per single view of an image, aiming to impose cross-view feature semantic consistency regularization and facilitate intra(inter)-class compactness(dispersion) of the feature space. Our method can be seamlessly incorporated into existing WSSS models without any changes to the base networks and does not incur any extra inference burden. Extensive experiments manifest that our method consistently improves two strong baselines by large margins, demonstrating the effectiveness. -->
 <img width="801" alt="图片" src="imgs/overview_1.png">
 
@@ -21,14 +23,14 @@ The Pytorch implementation of _Expand Prototype Modalities_
 
 1. Clone this repository.
 2. Data preparation.
-   Download PASCAL VOC 2012 devkit following instructions in http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit. 
+   Download PASCAL VOC 2012 devkit following instructions in [here](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/#devkit. )
    It is suggested to make a soft link toward downloaded dataset. 
-   Then download the annotation of VOC 2012 trainaug set (containing 10582 images) from https://www.dropbox.com/s/oeu149j8qtbs1x0/SegmentationClassAug.zip?dl=0 and place them all as ```VOC2012/SegmentationClassAug/xxxxxx.png```. 
-   Download the image-level labels ```cls_label.npy``` from https://github.com/YudeWang/SEAM/tree/master/voc12/cls_label.npy and place it into ```voc12/```, or you can generate it by yourself.
+   Then download the annotation of VOC 2012 trainaug set (containing 10582 images) from [here](https://www.dropbox.com/s/oeu149j8qtbs1x0/SegmentationClassAug.zip?dl=0) and place them all as ```VOC2012/SegmentationClassAug/xxxxxx.png```. 
+   Download the image-level labels ```cls_label.npy``` from [here](https://github.com/YudeWang/SEAM/tree/master/voc12/cls_label.npy) and place it into ```voc12/```, or you can generate it by yourself.
 3. Download ImageNet pretrained backbones.
    We use ResNet-38 for initial seeds generation and ResNet-101 for segmentation training. 
-   Download pretrained ResNet-38 from https://drive.google.com/file/d/15F13LEL5aO45JU-j45PYjzv5KW5bn_Pn/view.
-   The ResNet-101 can be downloaded from https://download.pytorch.org/models/resnet101-5d3b4d8f.pth.
+   Download pretrained ResNet-38 from [here](https://drive.google.com/file/d/15F13LEL5aO45JU-j45PYjzv5KW5bn_Pn/view).
+   The ResNet-101 can be downloaded from [here](https://download.pytorch.org/models/resnet101-5d3b4d8f.pth).
  
 
 ## Model Zoo
@@ -44,7 +46,9 @@ The Pytorch implementation of _Expand Prototype Modalities_
 
  \* indicates using densecrf.
 
-   The training results including initial seeds, intermediate products and pseudo masks can be found [here](https://drive.google.com/file/d/1TFw-e6P2tG3AYUgBLTw1pO0NVuBoXi4p/view?usp=sharing).
+   The training results including initial seeds, intermediate products and pseudo masks can be found [here](https://).
+   
+   .. Trained weight and mask will be published soon
 
 ## Usage
 

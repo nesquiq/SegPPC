@@ -22,7 +22,7 @@ import torch.nn.functional as F
 """
 TODO: import extra modules
 """
-import wandb
+# import wandb
 from time import time
 """
 
@@ -58,10 +58,10 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     
-    ## subin
-    wandb.init(project="Your_Project_Name_Here", entity="Your_entity_here")
-    wandb.run.name = args.session_name
-    wandb.config.update(args)
+    ## wandb
+    # wandb.init(project="Your_Project_Name_Here", entity="Your_entity_here")
+    # wandb.run.name = args.session_name
+    # wandb.config.update(args)
     ##
 
     pyutils.Logger(args.session_name + '.log')
@@ -374,19 +374,19 @@ if __name__ == '__main__':
                              'loss_local_cross_nce': loss_local_cross_nce1.item(),
                              'loss_local_cross_nce2': loss_local_cross_nce2.item()}
                 
-                ## subin
-                wandb.log({'loss': loss.item(),
-                           'loss_cls': loss_cls.item(),
-                           'loss_er': loss_er.item(),
-                           'loss_ecr': loss_ecr.item(),
-                           'loss_nce': loss_nce.item(),
-                           'loss_intra_nce': loss_intra_nce.item(),
-                           'loss_cross_nce': loss_cross_nce1.item(),
-                           'loss_cross_nce2': loss_cross_nce2.item(),
-                           'loss_local_nce': loss_local_nce.item(),
-                           'loss_local_intra_nce':loss_local_intra_nce.item(),
-                           'loss_local_cross_nce': loss_local_cross_nce1.item(),
-                           'loss_local_cross_nce2': loss_local_cross_nce2.item()})
+                ## wandb
+                # wandb.log({'loss': loss.item(),
+                #            'loss_cls': loss_cls.item(),
+                #            'loss_er': loss_er.item(),
+                #            'loss_ecr': loss_ecr.item(),
+                #            'loss_nce': loss_nce.item(),
+                #            'loss_intra_nce': loss_intra_nce.item(),
+                #            'loss_cross_nce': loss_cross_nce1.item(),
+                #            'loss_cross_nce2': loss_cross_nce2.item(),
+                #            'loss_local_nce': loss_local_nce.item(),
+                #            'loss_local_intra_nce':loss_local_intra_nce.item(),
+                #            'loss_local_cross_nce': loss_local_cross_nce1.item(),
+                #            'loss_local_cross_nce2': loss_local_cross_nce2.item()})
                 ##
 
                 itr = optimizer.global_step - 1
@@ -397,19 +397,19 @@ if __name__ == '__main__':
             time_logging = t1 -t2
             ##
             
-            wandb.log({'time_pre_process': time_pre_process,
-                       'time_forward1': time_forward1,
-                       'time_post_process1': time_post_process1,
-                       'time_forward2': time_forward2,
-                       'time_post_process2': time_post_process2,
-                       'time_loss_cls_er_ecr': time_loss_cls_er_ecr,
-                       'time_loss_local': time_loss_local,
-                       'time_class_proto_gen': time_class_proto_gen,
-                       'time_loss_cross': time_loss_cross,
-                       'time_loss_intra': time_loss_intra,
-                       'time_loss_total_sum': time_loss_total_sum,
-                       'time_backward': time_backward,
-                       'time_logging': time_logging})
+            # wandb.log({'time_pre_process': time_pre_process,
+            #            'time_forward1': time_forward1,
+            #            'time_post_process1': time_post_process1,
+            #            'time_forward2': time_forward2,
+            #            'time_post_process2': time_post_process2,
+            #            'time_loss_cls_er_ecr': time_loss_cls_er_ecr,
+            #            'time_loss_local': time_loss_local,
+            #            'time_class_proto_gen': time_class_proto_gen,
+            #            'time_loss_cross': time_loss_cross,
+            #            'time_loss_intra': time_loss_intra,
+            #            'time_loss_total_sum': time_loss_total_sum,
+            #            'time_backward': time_backward,
+            #            'time_logging': time_logging})
         else:
             print('')
             timer.reset_stage()
